@@ -272,7 +272,7 @@ const Login = createBottomTabNavigator({
         },
         heading: {
             marginTop:80,
-            fontFamily: "serif",
+            fontFamily: "Gayathri-Thin",
             textAlign: 'center',
             fontSize: 60, 
             color: '#607D8B'

@@ -4,6 +4,8 @@ import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { color } from 'react-native-reanimated';
 import { ScrollView } from 'react-native-gesture-handler';
+import {Font} from 'expo';
+
 
 
 class Addlocation extends Component {
@@ -11,10 +13,22 @@ class Addlocation extends Component {
     constructor(props) {
         super(props);
         this.state={
+            fontLoaded: false,
             textInput : [],
             inputData : []
         }
+
     }
+
+    async componentDidMount() {
+      await Font.loadAsync({
+        'Gayathri-Regular': require('../assets/fonts/Gayathri-Regular.ttf'),
+        'Rowdies-Regular': require('../assets/fonts/Rowdies-Regular.ttf')
+      })  
+      this.setState({fontLoaded: true})
+    }
+
+    
 
     addTextInput = (index) => {
         let textInput = this.state.textInput;
@@ -134,7 +148,7 @@ class Addlocation extends Component {
             heading: {
               marginTop:80,
               marginBottom:250,
-              fontFamily: "serif",
+              fontFamily: "Rowdies-Regular",
               textAlign: 'center',
               fontSize: 60, 
               color: '#607D8B'
@@ -146,7 +160,7 @@ class Addlocation extends Component {
             }
           });
           
-          export default Addlocation;
+ export default Addlocation;
 
 
 
