@@ -21,6 +21,8 @@ class LoginTab extends Component {
             
         
         }
+        this.handleLogin = this.handleLogin.bind(this);
+
     }
 
     componentDidMount() {
@@ -47,14 +49,9 @@ class LoginTab extends Component {
     }
 
     handleLogin() {
-        console.log(JSON.stringify(this.state));
-        if (this.state.remember)
-            SecureStore.setItemAsync('userinfo', JSON.stringify({username: this.state.username, password: this.state.password}))
-                .catch((error) => console.log('Could not save user info', error));
-        else
-            SecureStore.deleteItemAsync('userinfo')
-                .catch((error) => console.log('Could not delete user info', error));
-
+        
+        this.props.loginUser({username: this.username.value, password: this.password.value});
+        event.preventDefault();
     }
     
     
@@ -69,7 +66,7 @@ class LoginTab extends Component {
                 <View style={styles.container}>
                     
                     
-                    <Input
+                       <Input
                        placeholder="Username"
                        leftIcon={{ type: 'font-awesome', name: 'user-o'}}
                        onChangeText={(username) => this.setState({username})}
