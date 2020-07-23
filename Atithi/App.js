@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import Login from './Components/Home';
 import container from './Components/Home';
 import Addlocation from './Components/AddLocations';
+import Plan from './Components/plan';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -14,7 +15,7 @@ export default function App() {
   
 
     return (
-      <Addlocation />
+      <Plan />
     );
   }
 
