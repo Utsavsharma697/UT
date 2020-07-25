@@ -14,6 +14,8 @@
 #import <UMReactNativeAdapter/UMNativeModulesProxy.h>
 #import <UMReactNativeAdapter/UMModuleRegistryAdapter.h>
 
+#import <GoogleMaps/GoogleMaps.h>
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) NSDictionary *launchOptions;
@@ -26,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [GMSServices provideAPIKey:@"AIzaSyAnAyLrDdTuSgSu22rVtgJ_9vx9L1pgvgA"];
   self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
   self.launchOptions = launchOptions;
 

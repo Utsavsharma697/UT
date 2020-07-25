@@ -8,14 +8,15 @@ import {
     StatusBar
 } from 'react-native';
 
-import MapView from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 
 class Plan extends Component {
     render() {
         return (
 
-            <View>
+            <View style={styles.container}>
                 <MapView
+                
                 style={styles.map}
                 region={{
                 latitude: 37.78825,
